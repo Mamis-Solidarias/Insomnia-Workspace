@@ -1,0 +1,288 @@
+{
+  "_type": "export",
+  "__export_format": 4,
+  "__export_date": "2022-12-15T20:48:12.929Z",
+  "__export_source": "insomnia.desktop.app:v2022.6.0",
+  "resources": [
+    {
+      "_id": "req_8603b8909f604553ad416b445f573144",
+      "parentId": "fld_c51123d76b8f419d94a13e496b2138dd",
+      "modified": 1671134684359,
+      "created": 1671134684359,
+      "url": "{{ _.baseUrl }}/login",
+      "name": "Log in",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"email\": \"admin@mamis.com\",\n\t\"password\": \"Admin1234!\"\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1671134684359,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "fld_c51123d76b8f419d94a13e496b2138dd",
+      "parentId": "wrk_579023c8eba449ed9f3f320067eeadf6",
+      "modified": 1671124298649,
+      "created": 1671124298649,
+      "name": "Auth",
+      "description": "",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1671124298649,
+      "_type": "request_group"
+    },
+    {
+      "_id": "wrk_579023c8eba449ed9f3f320067eeadf6",
+      "parentId": null,
+      "modified": 1671124289838,
+      "created": 1671124289838,
+      "name": "Mamis Solidarias",
+      "description": "",
+      "scope": "collection",
+      "_type": "workspace"
+    },
+    {
+      "_id": "req_860b19c7801249c6a9528da92f18ac2e",
+      "parentId": "fld_c51123d76b8f419d94a13e496b2138dd",
+      "modified": 1671134693959,
+      "created": 1671134693959,
+      "url": "{{ _.baseUrl }}/logout",
+      "name": "Log out",
+      "description": "",
+      "method": "POST",
+      "body": {},
+      "parameters": [],
+      "headers": [],
+      "authentication": {},
+      "metaSortKey": -1671134693959,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_c5d4acd426d945b4be58b1caca352589",
+      "parentId": "fld_b2a63c18cec3464e9a190e8d9c16ab28",
+      "modified": 1671125530734,
+      "created": 1671125530734,
+      "url": "{{ _.graphQlUrl }}",
+      "name": "New Request",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/graphql",
+        "text": "{\"query\":\"{\\n\\tshoesFromCampaign(campaignId: 1) {\\n\\t\\tcount\\n\\t\\tgender\\n\\t\\tsize\\n\\t}\\n}\\n\"}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1671125530734,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "fld_b2a63c18cec3464e9a190e8d9c16ab28",
+      "parentId": "wrk_579023c8eba449ed9f3f320067eeadf6",
+      "modified": 1671124304016,
+      "created": 1671124304016,
+      "name": "Campaigns",
+      "description": "",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1671124304016,
+      "_type": "request_group"
+    },
+    {
+      "_id": "req_63dd1b949ffe4bf9aac1b4223e3b1a46",
+      "parentId": "fld_f230c3b61985472cb4b082c3e6221c0d",
+      "modified": 1671134907240,
+      "created": 1671134907240,
+      "url": "{{ _.graphQlUrl }}",
+      "name": "Get beneficiaries",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/graphql",
+        "text": "{\"query\":\"{\\n\\tbeneficiaries{\\n\\t\\tnodes {\\n\\t\\t\\tid\\n\\t\\t\\tfirstName\\n\\t\\t\\tfamilyId\\n\\t\\t}\\n\\t}\\n}\"}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1671134907240,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "fld_f230c3b61985472cb4b082c3e6221c0d",
+      "parentId": "wrk_579023c8eba449ed9f3f320067eeadf6",
+      "modified": 1671134894838,
+      "created": 1671134894838,
+      "name": "Beneficiaries",
+      "description": "",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1671134894838,
+      "_type": "request_group"
+    },
+    {
+      "_id": "req_e967dc685d644dd0a8344e5c4584444d",
+      "parentId": "fld_aaeac16f6f4344a288ee606c3eeb72a8",
+      "modified": 1671134443030,
+      "created": 1671134443030,
+      "url": "",
+      "name": "Get Campaign",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/graphql",
+        "text": "{\"query\":\"\"}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1671134470914,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "fld_aaeac16f6f4344a288ee606c3eeb72a8",
+      "parentId": "fld_b2a63c18cec3464e9a190e8d9c16ab28",
+      "modified": 1671134486017,
+      "created": 1671134486017,
+      "name": "Juntos",
+      "description": "",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1671134486017,
+      "_type": "request_group"
+    },
+    {
+      "_id": "req_4055ffa48f194a23950123f26023db02",
+      "parentId": "fld_aaeac16f6f4344a288ee606c3eeb72a8",
+      "modified": 1671134470864,
+      "created": 1671134470864,
+      "url": "{{ _.campaignsUrl }}/juntos",
+      "name": "Create Campaign",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"description\": \"Description of the edition\",\n\t\"provider\": \"Shoes.com\",\n\t\"edition\": \"2022\",\n\t\"communityId\": \"MI\",\n\t\"fundraiserGoal\": 1000,\n\t\"beneficiaries\": [\n\t\t1,\n\t\t2\n\t]\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1671134470864,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "env_9c5cb0865f7f7d05a0e5c3c78525e2a7ad0db857",
+      "parentId": "wrk_579023c8eba449ed9f3f320067eeadf6",
+      "modified": 1671124289841,
+      "created": 1671124289841,
+      "name": "Base Environment",
+      "data": {
+        "baseUrl": "http://localhost",
+        "apiUrl": "{{ _.baseUrl }}/api",
+        "graphQlUrl": "{{ _.baseUrl }}/query",
+        "campaignsUrl": "{{ _.apiUrl }}/campaigns"
+      },
+      "dataPropertyOrder": {
+        "&": [
+          "baseUrl",
+          "apiUrl",
+          "graphQlUrl",
+          "campaignsUrl"
+        ]
+      },
+      "color": null,
+      "isPrivate": false,
+      "metaSortKey": 1671124289841,
+      "_type": "environment"
+    },
+    {
+      "_id": "jar_9c5cb0865f7f7d05a0e5c3c78525e2a7ad0db857",
+      "parentId": "wrk_579023c8eba449ed9f3f320067eeadf6",
+      "modified": 1671124289842,
+      "created": 1671124289842,
+      "name": "Default Jar",
+      "cookies": [],
+      "_type": "cookie_jar"
+    },
+    {
+      "_id": "spc_5cbeee5865d24928a749d8d5233f8c98",
+      "parentId": "wrk_579023c8eba449ed9f3f320067eeadf6",
+      "modified": 1671124289839,
+      "created": 1671124289839,
+      "fileName": "Mamis Solidarias",
+      "contents": "",
+      "contentType": "yaml",
+      "_type": "api_spec"
+    }
+  ]
+}
